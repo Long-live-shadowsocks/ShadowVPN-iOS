@@ -1,7 +1,7 @@
 ShadowVPN for iOS
 =================
 
-[ShadowVPN](https://github.com/clowwindy/ShadowVPN) for iOS 9, using the new Network Extension API.
+[ShadowVPN](https://github.com/clowwindy/ShadowVPN) for iOS 10, using the new Network Extension API.
 
 Features
 - Stateless VPN

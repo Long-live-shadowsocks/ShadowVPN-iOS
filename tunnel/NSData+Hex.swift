@@ -8,23 +8,23 @@
 
 import Foundation
 
-extension NSData {
-    public class func fromHexString (string: String) -> NSData {
+extension Data {
+    public static func fromHexString (_ string: String) -> Data {
         let data = NSMutableData()
         var temp = ""
         
         for char in string.characters {
             temp += String(char)
-            if temp.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) == 2 {
-                let scanner = NSScanner(string: temp)
+            if temp.lengthOfBytes(using: String.Encoding.utf8) == 2 {
+                let scanner = Scanner(string: temp)
                 var value: CUnsignedInt = 0
-                scanner.scanHexInt(&value)
-                data.appendBytes(&value, length: 1)
+                scanner.scanHexInt32(&value)
+                data.append(&value, length: 1)
                 temp = ""
             }
             
         }
         
-        return data as NSData
+        return data as Data
     }
 }
